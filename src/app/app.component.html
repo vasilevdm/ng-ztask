@@ -1,21 +1,49 @@
-<div>
-  <router-outlet></router-outlet>
-  <div>
-    1. View of auth form with angular material, flexLayout, reactive or simple form submission
-  </div>
-  <div>
-    tdd
-    services
-    +modules
-    1. view
-    material
-    2. routing
-    routing
-    auth guard
-    3. dummy data
-    models
-    4. real data
-    5. ngrx
-    ngrx
-  </div>
-</div>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <mat-sidenav-container>
+    <mat-sidenav role="navigation">
+      <mat-nav-list>
+        <mat-list-item>
+          test
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <span>My Application</span>
+      </mat-toolbar>
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+      <div>
+        1. View of auth form with angular material, flexLayout, reactive or simple form submission
+      </div>
+      <div>
+        tdd
+        services
+        +modules
+        1. view
+        material
+        2. routing
+        routing
+        auth guard
+        3. dummy data
+        models
+        4. real data
+        5. ngrx
+        ngrx
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+</body>
+</html>
