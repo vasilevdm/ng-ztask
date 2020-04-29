@@ -8,9 +8,9 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display welcome message = "My Application"', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('ng-ztask app is running!');
+    expect(page.getTitleText()).toEqual('My Application');
   });
 
   afterEach(async () => {
