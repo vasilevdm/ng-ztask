@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AuthService} from './auth.service';
+import {SnackbarService} from '../shared/snackbar.service';
 
 @Component({
   selector: 'app-auth',
@@ -9,7 +11,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 export class AuthComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor() {
+  constructor(private authService: AuthService, private snackBar: SnackbarService) {
   }
 
   ngOnInit(): void {
@@ -24,7 +26,13 @@ export class AuthComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.loginForm);
+    if (this.loginForm.valid) {
+      const login = this.loginForm.value.login;
+      const password = this.loginForm.value.password;
+      this.authService.logIn(login, password);
+    } else {
+      this.snackBar.open('Form is not valid');
+    }
   }
 
 }

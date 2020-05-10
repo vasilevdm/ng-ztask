@@ -6,6 +6,8 @@ import {Router} from '@angular/router';
 import {AuthComponent} from './auth.component';
 import {AuthRoutingModule, routes} from './auth-routing.module';
 import {AppComponent} from '../app.component';
+import {MaterialModule} from '../material.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 describe('Router: Auth', () => {
   let location: Location;
@@ -15,7 +17,7 @@ describe('Router: Auth', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [AuthComponent, AppComponent],
-      imports: [AuthRoutingModule, RouterTestingModule.withRoutes(routes)]
+      imports: [AuthRoutingModule, RouterTestingModule.withRoutes(routes), MaterialModule, BrowserAnimationsModule]
     });
 
     location = TestBed.get(Location);

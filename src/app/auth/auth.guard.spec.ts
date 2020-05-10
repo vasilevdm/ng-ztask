@@ -8,6 +8,9 @@ import {AuthRoutingModule, routes} from './auth-routing.module';
 import {AppComponent} from '../app.component';
 import {AuthGuard} from './auth.guard';
 import {AuthService} from './auth.service';
+import {User} from './user.model';
+import {MaterialModule} from '../material.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 describe('Router: AuthGuard', () => {
   // let location: Location;
@@ -19,7 +22,7 @@ describe('Router: AuthGuard', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [AuthComponent, AppComponent],
-      imports: [AuthRoutingModule, RouterTestingModule.withRoutes(routes)],
+      imports: [AuthRoutingModule, RouterTestingModule.withRoutes(routes), MaterialModule, BrowserAnimationsModule],
       providers: [AuthService]
     });
 
@@ -30,19 +33,18 @@ describe('Router: AuthGuard', () => {
 
     fixture = TestBed.createComponent(AppComponent);
     router.initialNavigation();
+    authService.logOut();
   });
 
   it('navigate to "/" takes you to /login when is not authorize', fakeAsync(() => {
-    // storageService.isLoggedIn = true;
-    // router.navigate(['']);
-    // tick();
     authService.logOut();
     expect(authGuard.canActivate()).toEqual(router.parseUrl('/login'));
   }));
 
-  it('navigate to "/" doesnt take you to login page when user is authorized, return true', () => {
-    authService.logIn();
-    expect(authGuard.canActivate()).toEqual(true);
+  it('navigate to "/" doesnt take you to login page when user is authorized with the right credentials, return true', () => {
+    const user = new User();
+    authService.logIn(user.getLogin(), user.getPassword());
+    expect(authGuard.canActivate()).toBeTrue();
   });
 
 });
