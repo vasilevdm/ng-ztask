@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { AuthComponent } from './auth.component';
+import { LoginComponent } from './login/login.component';
 import { MaterialModule } from '../material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -7,7 +7,7 @@ import { AuthRoutingModule } from './auth-routing.module';
 
 @NgModule({
   declarations: [
-    AuthComponent
+    LoginComponent
   ],
   imports: [
     MaterialModule,
@@ -15,6 +15,6 @@ import { AuthRoutingModule } from './auth-routing.module';
     ReactiveFormsModule,
     AuthRoutingModule
   ],
-  exports: [AuthComponent]
+  exports: [LoginComponent]
 })
 export class AuthModule {}

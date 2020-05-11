@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ng-ztask": {
+      "hosting": {
+        "ng-ztask": [
+          "ng-ztask"
+        ]
+      }
+    }
+  }
+}
