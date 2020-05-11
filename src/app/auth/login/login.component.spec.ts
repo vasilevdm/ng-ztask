@@ -2,20 +2,20 @@
 import {TestBed, /*fakeAsync, tick, */ComponentFixture, async} from '@angular/core/testing';
 // import {RouterTestingModule} from '@angular/router/testing';
 // import {Router} from '@angular/router';
-import {AuthComponent} from './auth.component';
+import {LoginComponent} from './login.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import {AppModule} from '../app.module';
-import {AuthModule} from './auth.module';
+import {AppModule} from '../../app.module';
+import {AuthModule} from '../auth.module';
 
 describe('AuthComponent', () => {
-  let component: AuthComponent;
-  let fixture: ComponentFixture<AuthComponent>;
+  let component: LoginComponent;
+  let fixture: ComponentFixture<LoginComponent>;
 
   // const formBuilder: FormBuilder = new FormBuilder();
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AuthComponent],
+      declarations: [LoginComponent],
       imports: [
         ReactiveFormsModule,
         AppModule,
@@ -29,7 +29,7 @@ describe('AuthComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AuthComponent);
+    fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
 
     // component.loginForm = formBuilder.group({

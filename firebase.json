@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "ng-ztask",
+      "public": "dist/ng-ztask",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

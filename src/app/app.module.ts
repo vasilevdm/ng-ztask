@@ -8,6 +8,9 @@ import { AuthModule } from './auth/auth.module';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AppRoutingModule,
     FlexLayoutModule,
     MaterialModule,
-    AuthModule
+    AuthModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

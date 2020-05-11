@@ -3,7 +3,7 @@ import {TestBed, fakeAsync/*, tick*/} from '@angular/core/testing';
 import {RouterTestingModule} from '@angular/router/testing';
 import {Router} from '@angular/router';
 
-import {AuthComponent} from './auth.component';
+import {LoginComponent} from './login/login.component';
 import {AuthRoutingModule, routes} from './auth-routing.module';
 import {AppComponent} from '../app.component';
 import {AuthGuard} from './auth.guard';
@@ -21,7 +21,7 @@ describe('Router: AuthGuard', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AuthComponent, AppComponent],
+      declarations: [LoginComponent, AppComponent],
       imports: [AuthRoutingModule, RouterTestingModule.withRoutes(routes), MaterialModule, BrowserAnimationsModule],
       providers: [AuthService]
     });
